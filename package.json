@@ -1,18 +1,16 @@
 {
   "name": "react-native-progress-circle",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A light-weight progress circle indicator for React Native.",
   "main": "src/index.js",
-  "scripts": {
-    "test": "test"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git"
+    "url": "git@github.com:MrToph/react-native-progress-circle.git"
   },
   "keywords": [
     "react",
-    "native",
+    "react native",
     "percentage",
     "circle",
     "progress",

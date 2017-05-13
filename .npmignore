@@ -41,4 +41,3 @@ yarn-error.log
 *.bat
 .vscode
 *.log
-README/**
