@@ -58,6 +58,9 @@ render() {
 
 [Christoph Michel](http://cmichel.io)
 
+## Implementation Details
+
+[React Native Progress Circle](http://cmichel.io/react-native-progress-circle)
 
 ## License
 
