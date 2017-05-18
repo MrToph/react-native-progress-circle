@@ -1,6 +1,11 @@
 import React, { Component, PropTypes } from 'react'
 import { StyleSheet, View, ViewPropTypes } from 'react-native'
 
+// compatability for react-native versions < 0.44
+const ViewPropTypesStyle = ViewPropTypes
+  ? ViewPropTypes.style
+  : View.propTypes.style
+
 const styles = StyleSheet.create({
   outerCircle: {
     justifyContent: 'center',
@@ -36,7 +41,7 @@ export default class PercentageCircle extends Component {
     borderWidth: PropTypes.number,
     percent: PropTypes.number.isRequired, // eslint-disable-line react/no-unused-prop-types
     children: PropTypes.node,
-    containerStyle: ViewPropTypes.style,
+    containerStyle: ViewPropTypesStyle,
   };
 
   static defaultProps = {
