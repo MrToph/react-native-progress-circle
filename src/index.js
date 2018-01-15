@@ -1,11 +1,12 @@
-import React, { Component, PropTypes } from 'react'
-import { StyleSheet, View, ViewPropTypes, I18nManager } from 'react-native'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { StyleSheet, View, ViewPropTypes,I18nManager } from 'react-native'
 
 // compatability for react-native versions < 0.44
 const ViewPropTypesStyle = ViewPropTypes
   ? ViewPropTypes.style
   : View.propTypes.style
-
+let direction = I18nManager.isRTL? 'right' : 'left';
 const styles = StyleSheet.create({
   outerCircle: {
     justifyContent: 'center',
@@ -19,10 +20,12 @@ const styles = StyleSheet.create({
   leftWrap: {
     position: 'absolute',
     top: 0,
+    [`${direction}`]: 0,
   },
   halfCircle: {
     position: 'absolute',
     top: 0,
+    left: 0,
     borderTopRightRadius: 0,
     borderBottomRightRadius: 0,
   },
@@ -97,7 +100,6 @@ export default class PercentageCircle extends Component {
         style={[
           styles.leftWrap,
           {
-            [`${key}`]: radius,
             width: radius,
             height: radius * 2,
           },
@@ -107,7 +109,6 @@ export default class PercentageCircle extends Component {
           style={[
             styles.halfCircle,
             {
-              [`${key}`]: -radius,
               width: radius,
               height: radius * 2,
               borderRadius: radius,
