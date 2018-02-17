@@ -86,8 +86,8 @@ export default class PercentageCircle extends Component {
         // when the second half circle is not needed, we need it to cover
         // the negative degrees of the first circle
         backgroundColor: needHalfCircle2
-          ? this.props.color
-          : this.props.shadowColor,
+          ? props.color
+          : props.shadowColor,
       },
     }
   }
