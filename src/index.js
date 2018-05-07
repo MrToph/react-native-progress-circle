@@ -45,6 +45,7 @@ export default class PercentageCircle extends Component {
     percent: PropTypes.number.isRequired, // eslint-disable-line react/no-unused-prop-types
     children: PropTypes.node,
     containerStyle: ViewPropTypesStyle,
+    outerCircleStyle: ViewPropTypesStyle
   };
 
   static defaultProps = {
@@ -161,6 +162,7 @@ export default class PercentageCircle extends Component {
             height: this.props.radius * 2,
             borderRadius: this.props.radius,
             backgroundColor: this.props.shadowColor,
+            ...this.props.outerCircleStyle,
           },
         ]}
       >

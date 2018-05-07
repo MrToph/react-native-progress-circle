@@ -53,6 +53,7 @@ render() {
 | bgColor | The inner background color of the component  | String |  | ![#e9e9ef](https://placehold.it/15/e9e9ef/000000?text=+) `'#e9e9ef'` |
 | children | The children to render inside this component | Node |  | `null` |
 | containerStyle | The custom styling which will be applied to the container of the `children` | Style |  | `null` |
+| outerCircleStyle | The custom styling which will be applied to the outer circle | Style |  | `null` |
 
 ## Author
 
