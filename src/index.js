@@ -113,6 +113,7 @@ export default class PercentageCircle extends Component {
               width: radius,
               height: radius * 2,
               borderRadius: radius,
+              overflow: 'hidden',
               transform: [
                 { translateX: radius / 2 },
                 { rotate: `${rotateDegrees}deg` },
