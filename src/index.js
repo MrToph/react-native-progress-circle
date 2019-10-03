@@ -62,8 +62,8 @@ export default class PercentageCircle extends Component {
     this.state = this.getInitialStateFromProps(props)
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.setState(this.getInitialStateFromProps(nextProps))
+  componentDidUpdate() {
+    this.setState(this.getInitialStateFromProps(this.props))
   }
 
   getInitialStateFromProps(props) {
