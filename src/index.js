@@ -59,15 +59,15 @@ export default class PercentageCircle extends Component {
 
   constructor(props) {
     super(props)
-    this.state = this.getInitialStateFromProps(props)
+    this.state = {
+      halfCircle1Degree: 0,
+      halfCircle2Degree: 0,
+      halfCircle2Styles: {}
+    }
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.setState(this.getInitialStateFromProps(nextProps))
-  }
-
-  getInitialStateFromProps(props) {
-    const percent = Math.max(Math.min(100, props.percent), 0)
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const percent = Math.max(Math.min(100, nextProps.percent), 0)
     const needHalfCircle2 = percent > 50
     let halfCircle1Degree
     let halfCircle2Degree
@@ -87,11 +87,11 @@ export default class PercentageCircle extends Component {
         // when the second half circle is not needed, we need it to cover
         // the negative degrees of the first circle
         backgroundColor: needHalfCircle2
-          ? props.color
-          : props.shadowColor,
+          ? nextProps.color
+          : nextProps.shadowColor,
       },
     }
-  }
+  };
 
   renderHalfCircle(rotateDegrees, halfCircleStyles) {
     const { radius, color } = this.props
