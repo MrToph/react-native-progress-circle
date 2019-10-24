@@ -57,16 +57,8 @@ export default class PercentageCircle extends Component {
     containerStyle: null,
   };
 
-  constructor(props) {
-    super(props)
-    this.state = this.getInitialStateFromProps(props)
-  }
-
-  componentWillReceiveProps(nextProps) {
-    this.setState(this.getInitialStateFromProps(nextProps))
-  }
-
-  getInitialStateFromProps(props) {
+  computeDerivedState() {
+    const { props } = this;
     const percent = Math.max(Math.min(100, props.percent), 0)
     const needHalfCircle2 = percent > 50
     let halfCircle1Degree
@@ -153,7 +145,8 @@ export default class PercentageCircle extends Component {
       halfCircle1Degree,
       halfCircle2Degree,
       halfCircle2Styles,
-    } = this.state
+    } = this.computeDerivedState()
+
     return (
       <View
         style={[
