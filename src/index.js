@@ -7,6 +7,7 @@ const ViewPropTypesStyle = ViewPropTypes
   ? ViewPropTypes.style
   : View.propTypes.style
 let direction = I18nManager.isRTL? 'right' : 'left';
+let opDirection = I18nManager.isRTL? 'Left' : 'Right';
 const styles = StyleSheet.create({
   outerCircle: {
     justifyContent: 'center',
@@ -26,8 +27,8 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 0,
     left: 0,
-    borderTopRightRadius: 0,
-    borderBottomRightRadius: 0,
+    [`borderTop${opDirection}Radius`]: 0,
+    [`borderBottom${opDirection}Radius`]: 0,
   },
 })
 
