@@ -44,6 +44,7 @@ export default class PercentageCircle extends Component {
     radius: PropTypes.number.isRequired,
     borderWidth: PropTypes.number,
     percent: PropTypes.number.isRequired, // eslint-disable-line react/no-unused-prop-types
+    upendProgress: PropTypes.bool,
     children: PropTypes.node,
     containerStyle: ViewPropTypesStyle,
     outerCircleStyle: ViewPropTypesStyle
@@ -56,6 +57,7 @@ export default class PercentageCircle extends Component {
     borderWidth: 2,
     children: null,
     containerStyle: null,
+    upendProgress: false
   };
 
   computeDerivedState() {
@@ -87,6 +89,10 @@ export default class PercentageCircle extends Component {
   }
 
   renderHalfCircle(rotateDegrees, halfCircleStyles) {
+    if (this.props.upendProgress) {
+      rotateDegrees = -rotateDegrees + 180;
+    }
+
     const { radius, color } = this.props
     const key = I18nManager.isRTL ? 'right' : 'left';
     return (
